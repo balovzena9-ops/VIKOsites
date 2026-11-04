@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
-        /* ... (все стили остаются без изменений, я их не трогаю) ... */
         :root { --primary-orange: #FF8C00; --primary-yellow: #FFD700; --hover-orange: #E67E00; --dark-bg: #1A1A1A; --light-bg: #F5F5F5; --white: #FFFFFF; --text-dark: #333333; --text-gray: #888888; --border-color: #E0E0E0; --border-radius: 16px; --shadow: 0 4px 20px rgba(0, 0, 0, 0.05); --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.1); }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
         body { background-color: var(--light-bg); color: var(--text-dark); line-height: 1.5; }
@@ -44,7 +43,6 @@
         <span>ℹ️</span> Добро пожаловать в VIKO! Это игровой проект. Здесь нельзя купить реальную технику, но можно собрать свою коллекцию и заработать VIO!
     </div>
 
-    <!-- Модалка Входа -->
     <div class="modal-overlay" id="loginModal">
         <div class="modal-content">
             <button class="close-btn" onclick="toggleModal('loginModal')">&times;</button>
@@ -66,7 +64,6 @@
         </div>
     </div>
 
-    <!-- Модалка Регистрации -->
     <div class="modal-overlay" id="registerModal">
         <div class="modal-content" style="text-align: center;">
             <button class="close-btn" onclick="toggleModal('registerModal')">&times;</button>
@@ -86,7 +83,6 @@
         </div>
     </div>
 
-    <!-- Модалка Оформления Заказа -->
     <div class="modal-overlay" id="checkoutModal">
         <div class="modal-content" style="max-width: 600px;">
             <button class="close-btn no-print" onclick="toggleModal('checkoutModal')">&times;</button>
@@ -116,8 +112,6 @@
                     <button type="submit" class="btn-submit">Оплатить и получить чек</button>
                 </form>
             </div>
-
-            <!-- Блок для чека -->
             <div id="receiptContainer" style="display: none;">
                 <div id="printableReceipt" class="receipt-box">
                     <div class="receipt-header">
@@ -182,8 +176,6 @@
     </header>
 
     <main class="container">
-        
-        <!-- ГЛАВНАЯ -->
         <section id="home" class="page-section active">
             <div class="hero-grid">
                 <div class="hero-main">
@@ -192,53 +184,24 @@
                     <button class="btn-primary" onclick="switchPage('catalog'); renderProducts('Все');">Забрать сегодня</button>
                     <img src="https://github.com/balovzena9-ops/VIKOsites/blob/main/%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F59_20261104173206.png?raw=true" alt="VIKO 6">
                 </div>
-                
                 <div class="hero-side dark" onclick="switchPage('about')">
-                    <div>
-                        <h3>VIKO!</h3>
-                        <p>Узнать о нас</p>
-                    </div>
+                    <div><h3>VIKO!</h3><p>Узнать о нас</p></div>
                     <span style="font-size: 40px; align-self: flex-end;">→</span>
                 </div>
-                
                 <div class="hero-side" onclick="switchPage('interesting')">
-                    <div>
-                        <h3>Интересно!</h3>
-                        <p>История ОС и логистика</p>
-                    </div>
+                    <div><h3>Интересно!</h3><p>История ОС и логистика</p></div>
                     <img src="https://github.com/balovzena9-ops/VIKOsites/blob/main/%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F155_20261104173118.png?raw=true" alt="Интересно" style="height: 80px;">
                 </div>
             </div>
-
             <div style="margin-bottom: 40px; border-radius: var(--border-radius); overflow: hidden; cursor: pointer; box-shadow: var(--shadow);" onclick="switchPage('catalog'); renderProducts('База');">
                 <img src="https://github.com/balovzena9-ops/VIKOsites/blob/main/%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F155_20261104173118.png?raw=true" alt="Новое поколение VIKO 6" style="width: 100%; height: auto; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
             </div>
-
             <h2 class="section-title">Почему выбирают VIKO</h2>
             <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">🛡️</div>
-                    <div class="feature-text">
-                        <h4>Официальная гарантия</h4>
-                        <p>1 год на новые устройства. Чек хранится в личном кабинете.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🚚</div>
-                    <div class="feature-text">
-                        <h4>Быстрая доставка</h4>
-                        <p>По Москве — курьером, по России — СДЭК. Отправим в день заказа.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">💎</div>
-                    <div class="feature-text">
-                        <h4>Бонусы VIO</h4>
-                        <p>Покупайте и копите баллы. 90 VIO = 100 рублей скидки.</p>
-                    </div>
-                </div>
+                <div class="feature-item"><div class="feature-icon">🛡️</div><div class="feature-text"><h4>Официальная гарантия</h4><p>1 год на новые устройства. Чек хранится в личном кабинете.</p></div></div>
+                <div class="feature-item"><div class="feature-icon">🚚</div><div class="feature-text"><h4>Быстрая доставка</h4><p>По Москве — курьером, по России — СДЭК. Отправим в день заказа.</p></div></div>
+                <div class="feature-item"><div class="feature-icon">💎</div><div class="feature-text"><h4>Бонусы VIO</h4><p>Покупайте и копите баллы. 90 VIO = 100 рублей скидки.</p></div></div>
             </div>
-
             <h2 class="section-title">Популярные категории</h2>
             <div class="category-grid">
                 <div class="category-card" onclick="switchPage('catalog'); renderProducts('База');"><span>База</span></div>
@@ -250,7 +213,6 @@
             </div>
         </section>
 
-        <!-- ПРОФИЛЬ -->
         <section id="profile" class="page-section">
             <h1 class="section-title">Личный кабинет</h1>
             <div class="profile-grid">
@@ -264,24 +226,13 @@
                 <div class="profile-content">
                     <h2>Мои заказы</h2>
                     <p style="color: var(--text-gray); margin-top: 10px;">Здесь будет отображаться история ваших покупок и чеки.</p>
-                    
-                    <!-- АДМИН ПАНЕЛЬ -->
                     <div class="admin-panel" id="adminPanel" style="display: none;">
                         <h3>🛠️ Админ-панель (Только для владельца)</h3>
                         <p style="margin-bottom: 15px; font-size: 14px;">Введите данные чека для оформления возврата и начисления VIO пользователю.</p>
                         <form class="return-form" onsubmit="handleReturn(event)">
-                            <div class="form-group">
-                                <label>Email пользователя</label>
-                                <input type="email" id="returnEmail" required placeholder="user@mail.com">
-                            </div>
-                            <div class="form-group">
-                                <label>Номер чека</label>
-                                <input type="text" id="returnReceipt" required placeholder="VIKO-123456">
-                            </div>
-                            <div class="form-group">
-                                <label>Модель</label>
-                                <input type="text" id="returnModel" required placeholder="VIKO 6">
-                            </div>
+                            <div class="form-group"><label>Email пользователя</label><input type="email" id="returnEmail" required placeholder="user@mail.com"></div>
+                            <div class="form-group"><label>Номер чека</label><input type="text" id="returnReceipt" required placeholder="VIKO-123456"></div>
+                            <div class="form-group"><label>Модель</label><input type="text" id="returnModel" required placeholder="VIKO 6"></div>
                             <button type="submit">Оформить возврат</button>
                         </form>
                     </div>
@@ -289,7 +240,6 @@
             </div>
         </section>
 
-        <!-- О НАС -->
         <section id="about" class="page-section">
             <div class="about-content">
                 <div class="about-text">
@@ -306,19 +256,14 @@
             </div>
         </section>
 
-        <!-- ИНТЕРЕСНО -->
         <section id="interesting" class="page-section">
             <h1 class="section-title">Интересные факты о VIKO</h1>
-            
             <div class="info-block">
                 <h2>Переход на OS MY от MYRY</h2>
                 <p>Ранее VIKO использовала собственную операционную систему, но теперь все наши устройства работают на сертифицированной <strong>OS MY</strong> от компании MAYSKIY RUNWAY. Это обеспечивает повышенный уровень безопасности и максимальную производительность.</p>
-                
                 <div class="widgets-grid">
                     <div class="my-widget-container">
-                        <div class="aurora-container">
-                            <div class="aurora-blob"></div><div class="aurora-blob"></div><div class="aurora-blob"></div>
-                        </div>
+                        <div class="aurora-container"><div class="aurora-blob"></div><div class="aurora-blob"></div><div class="aurora-blob"></div></div>
                         <div class="content-layer">
                             <div class="top-text">Текущая ОС MY</div>
                             <svg class="my-logo-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
@@ -334,18 +279,13 @@
                             <div class="bottom-version" id="myVersionDisplay">MY 3.00</div>
                         </div>
                     </div>
-
                     <div class="vik-widget-container">
-                        <div class="aurora-container">
-                            <div class="aurora-blob"></div><div class="aurora-blob"></div>
-                        </div>
+                        <div class="aurora-container"><div class="aurora-blob"></div><div class="aurora-blob"></div></div>
                         <div class="content-layer">
                             <div class="top-text" id="vikHeaderText">Текущая ОС VIK</div>
                             <svg class="vik-logo-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="250" cy="250" r="240" fill="#FF9900" />
-                                <g transform="rotate(-15 250 250)">
-                                    <text x="250" y="320" font-family="'Arial Black', Impact, sans-serif" font-size="280" font-weight="900" fill="#6B3A1F" text-anchor="middle" letter-spacing="-5">1В</text>
-                                </g>
+                                <g transform="rotate(-15 250 250)"><text x="250" y="320" font-family="'Arial Black', Impact, sans-serif" font-size="280" font-weight="900" fill="#6B3A1F" text-anchor="middle" letter-spacing="-5">1В</text></g>
                                 <path d="M 160 50 C 200 40, 300 40, 340 50" fill="none" stroke="#6B3A1F" stroke-width="10" stroke-linecap="round" opacity="0.8" />
                                 <path d="M 60 220 C 80 200, 100 180, 110 160" fill="none" stroke="#6B3A1F" stroke-width="12" stroke-linecap="round" opacity="0.8" />
                                 <path d="M 80 350 L 120 320" fill="none" stroke="#6B3A1F" stroke-width="12" stroke-linecap="round" opacity="0.8" />
@@ -355,7 +295,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="info-block">
                 <h2>Наша логистика</h2>
                 <p>Доставка ваших заказов осуществляется проверенными партнерами:</p>
@@ -367,11 +306,9 @@
             </div>
         </section>
 
-        <!-- ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ -->
         <section id="legal" class="page-section">
             <div class="legal-content">
                 <h2>Юридическая информация</h2>
-                
                 <h3>1. Общие сведения о компании</h3>
                 <p>Настоящим официальным уведомлением подтверждается, что разработка, производство и дистрибуция мобильных устройств осуществляются <strong>Обществом с ограниченной ответственностью «VIKO gadgets company»</strong> (ООО «Вико», MAYE VIKO).</p>
                 <ul>
@@ -379,30 +316,25 @@
                     <li>ООО «Вико» регулярно перечисляет в пользу вышестоящей структуры установленные законодательством отчисления (лицензионные платежи, дивиденды и роялти).</li>
                     <li>Руководство текущей деятельностью осуществляет Генеральный директор — <strong>Яна Андреевна</strong>, назначенная решением Виктории Гаммы.</li>
                 </ul>
-
                 <h3>2. Договорное партнерство</h3>
                 <p>Взаимоотношения Компании со стратегическим партнером — <strong>MAYSKIY RUNWAY</strong> — регламентированы Генеральным соглашением. MAYSKIY RUNWAY оказывает всестороннее содействие: финансовое обеспечение, инвестиционную поддержку, а также поставки оригинальных деталей и микрочипов.</p>
-
                 <h3>3. Производственная инфраструктура</h3>
                 <p>Выпуск продукции осуществляется на базе 4 авторизованных комплексов:</p>
                 <ul>
                     <li>Завод «Аэропорт Майск» (на территории Аэропорта Майск);</li>
                     <li>Заводы №2, №3 и №4 (Московская область).</li>
                 </ul>
-
                 <h3>4. Логистическое обеспечение</h3>
                 <p>Транспортировка осуществляется авторизованными операторами:</p>
                 <ul>
                     <li><strong>Воздушная логистика:</strong> Карго-авиакомпания «МайКомфорт» на основе эксклюзивного договора.</li>
                     <li><strong>Наземная логистика:</strong> Партнерская транспортная компания «МайМай».</li>
                 </ul>
-
                 <h3>5. Программное обеспечение</h3>
                 <ul>
                     <li><strong>VIKO Phone:</strong> Ранее использовавшаяся ОС упразднена. Все устройства работают под управлением сертифицированной <span class="legal-highlight">OS MY</span> от MAYSKIY RUNWAY.</li>
                     <li><strong>Смарт-динамики:</strong> Работают на закрытой ОС собственной разработки ООО «Вико».</li>
                 </ul>
-
                 <h3>6. Интеллектуальный ассистент VI</h3>
                 <p>В смарт-динамики интегрирован ИИ <strong>VI (VIKO Intelligence)</strong>. ИИ действует исключительно в интересах пользователя и не использует ненормативную лексику.</p>
                 <p><strong>Правила взаимодействия:</strong></p>
@@ -410,33 +342,26 @@
                     <li>Запрещается использовать в адрес ИИ матерные слова, оскорбления и крик.</li>
                     <li>При систематических нарушениях устройство переходит в <span class="legal-highlight">режим игнорирования на 24 часа</span>.</li>
                 </ul>
-
                 <h3>7. Гарантийные обязательства</h3>
                 <p>В случае обнаружения производственного брака покупатель имеет право:</p>
                 <ul>
                     <li>Осуществить возврат с выплатой компенсации по актуальной стоимости.</li>
                     <li>Произвести замену на новое устройство надлежащего качества.</li>
                 </ul>
-
                 <h3>8. Коммерческая дистрибуция</h3>
                 <p>Реализация продукции осуществляется через собственные розничные точки и совместные точки с MAYSKIY RUNWAY.</p>
-
                 <h3>9. Стратегическое партнерство</h3>
                 <p>Взаимодействие между VIKO и MAYSKIY RUNWAY основывается на принципах доверия и дружеских отношениях. Директор MAYSKIY RUNWAY — <strong>Василиса Сергеевна</strong> — и Генеральный директор ВИКО — <strong>Яна Андреевна</strong> — лучшие подруги. Василиса Сергеевна гарантирует бессрочную поддержку компании ВИКО во всех сферах.</p>
             </div>
         </section>
 
-        <!-- КАТАЛОГ -->
         <section id="catalog" class="page-section">
             <h1 class="section-title" id="catalogTitle">Каталог смартфонов VIKO</h1>
             <div class="product-grid" id="productGrid"></div>
         </section>
 
-        <!-- СТРАНИЦА ТОВАРА -->
         <section id="product-detail" class="page-section">
-            <div style="margin-bottom: 20px; cursor: pointer; color: var(--text-gray); font-weight: 600;" onclick="switchPage('catalog')">
-                ← Вернуться в каталог
-            </div>
+            <div style="margin-bottom: 20px; cursor: pointer; color: var(--text-gray); font-weight: 600;" onclick="switchPage('catalog')">← Вернуться в каталог</div>
             <div class="product-detail-grid">
                 <div class="product-gallery">
                     <div class="product-badge" id="detailBadge">Новинка</div>
@@ -466,27 +391,20 @@
                 <div id="detailSpecsList"></div>
             </div>
         </section>
-
     </main>
 
     <script>
-        // --- SUPABASE INIT (с проверкой) ---
-        console.log("Скрипт загружен");
         const SUPABASE_URL = 'https://pcpfetfmdaaekviqktyj.supabase.co'; 
         const SUPABASE_KEY = 'sb_publishable_5LpHSVNo0zwy_vd5iUrZeA_i_6YoYH6';
         
         let supabaseClient;
         try {
             if (typeof supabase === 'undefined') {
-                console.error("Библиотека Supabase не загружена! Проверьте интернет или блокировщики.");
-                alert("Ошибка: библиотека Supabase не загружена. Проверьте подключение к интернету или отключите блокировщик рекламы.");
+                console.error("Библиотека Supabase не загружена!");
             } else {
                 supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-                console.log("Supabase инициализирован");
             }
-        } catch (e) {
-            console.error("Ошибка инициализации Supabase:", e);
-        }
+        } catch (e) { console.error("Ошибка инициализации Supabase:", e); }
 
         let currentUser = null;
         let currentVioBalance = 0;
@@ -498,7 +416,6 @@
         let currentPrice = 0;
         let lastOrderData = null;
 
-        // --- БАЗА ТОВАРОВ (без изменений) ---
         const products = [
             { id: 'viko2-base', name: 'VIKO 2 "Кошмары"', category: 'База', isNew: false, basePrice: 40000, colors: { 'оранжевый': 'https://github.com/balovzena9-ops/VIKOsites/blob/main/%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F154_20261104172921.png?raw=true' }, storage: ['126 ГБ'], storagePrices: { '126 ГБ': 40000 }, specs: [['Экран', '4,7 дюйма, Dynamic BALO3, 3120x1440, 1-60 Гц, 2600 нит'], ['Процессор', 'MECOvem 3 (до 4410 ГГц)'], ['ОЗУ', '15 ГБ (MVEE)'], ['Камеры', '650 Мп + 35 Мп + 10 Мп (3x) + 56 Мп (10x). Фронтальная: 5 Мп'], ['Аккумулятор', '5500 мАч, 35 Вт'], ['Особенности', 'Титановая рамка, IP68, MayUm, Wi-Fi7, BT 5'], ['ОС', 'MY3']] },
             { id: 'viko3-base', name: 'VIKO 3', category: 'База', isNew: false, basePrice: 50000, colors: { 'оранжевый': 'https://github.com/balovzena9-ops/VIKOsites/blob/main/%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F154_20261104172929.png?raw=true', 'черный': 'https://github.com/balovzena9-ops/VIKOsites/blob/main/%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F154_20261104172936.png?raw=true' }, storage: ['128 ГБ', '256 ГБ'], storagePrices: { '128 ГБ': 50000, '256 ГБ': 65000 }, specs: [['Экран', '6,1 дюйма, Dynamic BALO3.5, 310x144, 1-60 Гц, 2605 нит'], ['Процессор', 'MECOvem 3 (до 5450 ГГц)'], ['ОЗУ', '10 ГБ'], ['Камеры', '25 Мп + 30 Мп + 15 Мп (4x) + 20 Мп (6x). Фронтальная: 17 Мп'], ['Аккумулятор', '5100 мАч'], ['Особенности', 'Пластиковая рамка, IP68, Wi-Fi 5, BT 5'], ['ОС', 'MY3']] },
@@ -516,7 +433,6 @@
             { id: 'viko1-pad', name: 'VIKO 1 PAD', category: 'PAD', isNew: true, basePrice: 15000, colors: { 'оранжевый': 'https://github.com/balovzena9-ops/VIKOsites/blob/main/%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F154_20261104172915.png?raw=true' }, storage: ['150 ГБ'], storagePrices: { '150 ГБ': 15000 }, specs: [['Экран', '10.0 дюйма, Dynamic BALO3.0, 310x144 (MV), 1-12 Гц, 260 нит'], ['Процессор', 'MECOvem 2 (до 550 ГГц)'], ['ОЗУ', '10 ГБ (MVEE*)'], ['Камеры', '25 Мп + 30 Мп + 15 Мп (6x) + 20 Мп (3x). Фронтальная: нет'], ['Аккумулятор', '5100 мАч'], ['Особенности', 'Пластиковая рамка, IP68, Wi-Fi 5, BT 5'], ['ОС', 'MY3']] }
         ];
 
-        // --- ИНИЦИАЛИЗАЦИЯ ВИДЖЕТОВ ---
         document.addEventListener('DOMContentLoaded', function() {
             const myVersionElement = document.getElementById('myVersionDisplay');
             if(myVersionElement) {
@@ -534,7 +450,6 @@
                     myVersionElement.textContent = `MY ${currentVersion.toFixed(2)}`;
                 }
             }
-
             const vikHeader = document.getElementById('vikHeaderText');
             const vikFooter = document.getElementById('vikFooterText');
             if(vikHeader && vikFooter) {
@@ -554,7 +469,6 @@
             }
         });
 
-        // --- ЛОГИКА ---
         function renderProducts(category = 'Все', searchQuery = '') {
             const grid = document.getElementById('productGrid');
             grid.innerHTML = '';
@@ -565,12 +479,10 @@
                 filtered = filtered.filter(p => p.name.toLowerCase().includes(query));
             }
             document.getElementById('catalogTitle').innerText = category === 'Все' ? 'Каталог смартфонов VIKO' : `Категория: ${category}`;
-
             if(filtered.length === 0) {
                 grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1; color: var(--text-gray); padding: 40px;">Ничего не найдено.</p>';
                 return;
             }
-
             filtered.forEach(product => {
                 const firstColorKey = Object.keys(product.colors)[0];
                 const coverImage = product.colors[firstColorKey] || 'https://via.placeholder.com/200?text=VIKO';
@@ -588,10 +500,7 @@
             });
         }
 
-        function handleSearch(query) {
-            switchPage('catalog');
-            renderProducts('Все', query);
-        }
+        function handleSearch(query) { switchPage('catalog'); renderProducts('Все', query); }
 
         function openProductDetail(id) {
             currentProduct = products.find(p => p.id === id);
@@ -599,7 +508,6 @@
             switchPage('product-detail');
             document.getElementById('detailTitle').innerText = currentProduct.name;
             document.getElementById('detailBadge').style.display = currentProduct.isNew ? 'block' : 'none';
-            
             const colorsContainer = document.getElementById('detailColors');
             colorsContainer.innerHTML = '';
             Object.keys(currentProduct.colors).forEach((color, index) => {
@@ -609,7 +517,6 @@
                 btn.onclick = () => selectColor(color, btn);
                 colorsContainer.appendChild(btn);
             });
-
             const storageContainer = document.getElementById('detailStorage');
             storageContainer.innerHTML = '';
             currentProduct.storage.forEach((mem, index) => {
@@ -619,7 +526,6 @@
                 btn.onclick = () => selectStorage(mem, btn);
                 storageContainer.appendChild(btn);
             });
-
             const specsContainer = document.getElementById('detailSpecsList');
             specsContainer.innerHTML = '';
             currentProduct.specs.forEach(spec => {
@@ -628,12 +534,10 @@
                 row.innerHTML = `<div class="spec-name">${spec[0]}</div><div class="spec-value">${spec[1]}</div>`;
                 specsContainer.appendChild(row);
             });
-
             const firstColor = Object.keys(currentProduct.colors)[0];
             const firstStorage = currentProduct.storage[0];
             selectColor(firstColor, colorsContainer.children[0]);
             selectStorage(firstStorage, storageContainer.children[0]);
-            
             const thumbsContainer = document.getElementById('detailThumbnails');
             thumbsContainer.innerHTML = '';
             Object.values(currentProduct.colors).forEach(imgUrl => {
@@ -692,21 +596,17 @@
 
         async function handleCheckout(event) {
             event.preventDefault();
-            
             const cardInput = document.getElementById('cardNumber').value.trim().toLowerCase();
             const city = document.getElementById('checkoutCity').value.trim();
             const address = document.getElementById('checkoutAddress').value.trim();
             const email = document.getElementById('checkoutEmail').value.trim();
             const agree = document.getElementById('checkoutAgree').checked;
-
             if (cardInput !== 'карта') { alert('Неверный номер карты! Введите слово "карта".'); return; }
             if (!agree) { alert('Необходимо согласие на обработку персональных данных!'); return; }
             if (!currentUser) { alert('Пожалуйста, войдите в аккаунт!'); toggleModal('loginModal'); return; }
-
             let total = cart.reduce((sum, item) => sum + item.price, 0);
             let earnedVio = Math.floor(total * 0.9);
             let spendVio = 0;
-
             if (currentVioBalance > 0) {
                 let input = prompt(`У вас на балансе ${currentVioBalance} VIO.\nСколько VIO хотите списать? (Курс: 90 VIO = 100 руб)\nОставьте 0, если не хотите.`, "0");
                 if (input !== null) {
@@ -719,9 +619,7 @@
                     alert(`Списано ${spendVio} VIO. Скидка: ${discount.toLocaleString('ru-RU')} ₽. К оплате: ${total.toLocaleString('ru-RU')} ₽.`);
                 }
             }
-
             const receiptNumber = 'VIKO-' + Math.floor(100000 + Math.random() * 900000);
-
             try {
                 const { data, error } = await supabaseClient.rpc('process_order', {
                     p_user_id: currentUser.id,
@@ -731,24 +629,12 @@
                     p_earned_vio: earnedVio,
                     p_receipt_number: receiptNumber
                 });
-
                 if (error) throw error;
-                
-                lastOrderData = {
-                    receipt: receiptNumber,
-                    date: new Date().toLocaleString('ru-RU'),
-                    items: [...cart],
-                    total: total,
-                    spentVio: spendVio,
-                    earnedVio: earnedVio,
-                    city, address, email
-                };
-
+                lastOrderData = { receipt: receiptNumber, date: new Date().toLocaleString('ru-RU'), items: [...cart], total: total, spentVio: spendVio, earnedVio: earnedVio, city, address, email };
                 showReceipt(lastOrderData);
                 cart = [];
                 document.getElementById('cartCount').innerText = '0';
                 loadUserProfile();
-
             } catch (error) {
                 console.error('Ошибка:', error);
                 alert('Ошибка при проведении заказа: ' + error.message);
@@ -759,28 +645,15 @@
             document.getElementById('checkoutFormContainer').style.display = 'none';
             document.getElementById('receiptContainer').style.display = 'block';
             document.getElementById('receiptNumberDisplay').innerText = order.receipt;
-
             const details = document.getElementById('receiptDetails');
-            let itemsHtml = order.items.map(item => `
-                <tr>
-                    <td>${item.name} (${item.color}, ${item.storage})</td>
-                    <td>${item.price.toLocaleString('ru-RU')} ₽</td>
-                </tr>
-            `).join('');
-
+            let itemsHtml = order.items.map(item => `<tr><td>${item.name} (${item.color}, ${item.storage})</td><td>${item.price.toLocaleString('ru-RU')} ₽</td></tr>`).join('');
             details.innerHTML = `
                 <p><strong>Дата:</strong> ${order.date}</p>
                 <p><strong>Покупатель:</strong> ${order.email}</p>
                 <p><strong>Город:</strong> ${order.city}, ${order.address}</p>
-                <table class="receipt-table">
-                    <thead><tr><th>Товар</th><th>Цена</th></tr></thead>
-                    <tbody>${itemsHtml}</tbody>
-                </table>
+                <table class="receipt-table"><thead><tr><th>Товар</th><th>Цена</th></tr></thead><tbody>${itemsHtml}</tbody></table>
                 <div class="receipt-total">Итого: ${order.total.toLocaleString('ru-RU')} ₽</div>
-                <p style="font-size: 12px; margin-top: 10px; color: #666;">
-                    Списано VIO: ${order.spentVio} <br>
-                    Начислено VIO: ${order.earnedVio}
-                </p>
+                <p style="font-size: 12px; margin-top: 10px; color: #666;">Списано VIO: ${order.spentVio} <br> Начислено VIO: ${order.earnedVio}</p>
             `;
         }
 
@@ -794,51 +667,32 @@
             }
         }
 
-        // --- АВТОРИЗАЦИЯ (С ОТЛАДКОЙ) ---
         async function handleLogin(event) {
             event.preventDefault();
-            console.log("Кнопка Войти нажата");
-            
             const email = document.getElementById('loginEmail').value;
             const password = document.getElementById('loginPassword').value;
-            console.log("Email:", email, "Пароль:", password);
-
-            if (!supabaseClient) {
-                alert("Ошибка: Supabase не инициализирован. Проверьте консоль.");
-                return;
-            }
-
+            if (!supabaseClient) { alert("Ошибка: Supabase не инициализирован."); return; }
             try {
                 const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
-                
                 if (error) {
-                    console.error("Ошибка входа:", error);
                     alert('Ошибка входа: ' + error.message);
                 } else {
-                    console.log("Успешный вход:", data);
                     currentUser = data.user;
                     toggleModal('loginModal');
                     await loadUserProfile();
                     switchPage('profile');
                 }
             } catch (e) {
-                console.error("Критическая ошибка при входе:", e);
                 alert("Критическая ошибка: " + e.message);
             }
         }
 
         async function handleRegister(event) {
             event.preventDefault();
-            console.log("Кнопка Регистрация нажата");
             const email = document.getElementById('regEmail').value;
             const password = document.getElementById('regPassword').value;
             if (!email || !password) return;
-            
-            if (!supabaseClient) {
-                alert("Ошибка: Supabase не инициализирован.");
-                return;
-            }
-
+            if (!supabaseClient) { alert("Ошибка: Supabase не инициализирован."); return; }
             try {
                 const { error } = await supabaseClient.auth.signUp({ email, password });
                 if (error) alert('Ошибка: ' + error.message);
@@ -847,16 +701,12 @@
                     toggleModal('registerModal');
                     toggleModal('loginModal');
                 }
-            } catch (e) {
-                alert("Ошибка регистрации: " + e.message);
-            }
+            } catch (e) { alert("Ошибка регистрации: " + e.message); }
         }
 
         async function handleLogout() {
             await supabaseClient.auth.signOut();
-            currentUser = null;
-            isAdmin = false;
-            currentVioBalance = 0;
+            currentUser = null; isAdmin = false; currentVioBalance = 0;
             document.getElementById('userNameDisplay').innerText = 'Войти';
             document.getElementById('userVioDisplay').innerText = '0 VIO';
             document.getElementById('adminPanel').style.display = 'none';
@@ -864,20 +714,33 @@
         }
 
         function handleProfileClick() {
-            if (currentUser) {
-                switchPage('profile');
-            } else {
-                toggleModal('loginModal');
-            }
+            if (currentUser) switchPage('profile');
+            else toggleModal('loginModal');
         }
 
         async function loadUserProfile() {
-            if (!currentUser) return;
+            if (!currentUser || !supabaseClient) return;
             try {
                 const { data, error } = await supabaseClient.from('profiles').select('vio_balance, is_admin').eq('id', currentUser.id).single();
-                if (data && !error) {
+                
+                if (error) {
+                    console.error("Ошибка загрузки профиля (возможно нет колонки is_admin):", error);
+                    // Фолбэк: если колонки is_admin нет (ошибка 406), грузим только баланс
+                    const { data: fallbackData, error: fallbackError } = await supabaseClient.from('profiles').select('vio_balance').eq('id', currentUser.id).single();
+                    if (fallbackData && !fallbackError) {
+                         currentVioBalance = fallbackData.vio_balance;
+                         document.getElementById('userNameDisplay').innerText = currentUser.email.split('@')[0];
+                         document.getElementById('userVioDisplay').innerText = `${fallbackData.vio_balance.toLocaleString('ru-RU')} VIO`;
+                         document.getElementById('profileNameDisplay').innerText = currentUser.email.split('@')[0];
+                         document.getElementById('profileEmailDisplay').innerText = currentUser.email;
+                         document.getElementById('profileVioDisplay').innerText = fallbackData.vio_balance.toLocaleString('ru-RU');
+                    }
+                    return;
+                }
+
+                if (data) {
                     currentVioBalance = data.vio_balance;
-                    isAdmin = data.is_admin;
+                    isAdmin = data.is_admin || false;
                     
                     document.getElementById('userNameDisplay').innerText = currentUser.email.split('@')[0];
                     document.getElementById('userVioDisplay').innerText = `${data.vio_balance.toLocaleString('ru-RU')} VIO`;
@@ -893,7 +756,7 @@
                     }
                 }
             } catch (e) {
-                console.error("Ошибка загрузки профиля:", e);
+                console.error("Критическая ошибка загрузки профиля:", e);
             }
         }
 
@@ -902,23 +765,14 @@
             const email = document.getElementById('returnEmail').value.trim();
             const receipt = document.getElementById('returnReceipt').value.trim();
             const model = document.getElementById('returnModel').value.trim();
-
             if(!confirm(`Оформить возврат для ${email} по чеку ${receipt} (Модель: ${model})?`)) return;
-
             try {
-                const { data, error } = await supabaseClient.rpc('process_return', {
-                    p_email: email,
-                    p_receipt_number: receipt,
-                    p_model: model
-                });
-
+                const { data, error } = await supabaseClient.rpc('process_return', { p_email: email, p_receipt_number: receipt, p_model: model });
                 if (error) throw error;
-
                 alert(`Возврат успешно оформлен! Пользователю ${email} начислены VIO.`);
                 document.getElementById('returnEmail').value = '';
                 document.getElementById('returnReceipt').value = '';
                 document.getElementById('returnModel').value = '';
-
             } catch (error) {
                 console.error('Ошибка возврата:', error);
                 alert('Ошибка возврата: ' + error.message);
